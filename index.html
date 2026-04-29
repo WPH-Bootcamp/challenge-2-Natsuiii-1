@@ -2,13 +2,98 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech. — Build with the Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
-    <title>Challenge - 2</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- code here -->
+    <header class="navbar">
+      <div class="navbar__container">
+        <a href="#" class="navbar__logo">Tech.</a>
+        <nav class="navbar__nav">
+          <ul class="navbar__list">
+            <li><a href="#about" class="navbar__link">About</a></li>
+            <li><a href="#service" class="navbar__link">Service</a></li>
+            <li><a href="#our-work" class="navbar__link">Our Work</a></li>
+            <li><a href="#team" class="navbar__link">Team</a></li>
+          </ul>
+        </nav>
+        <a href="#contact" class="btn btn--primary">Contact Us</a>
+        <button class="navbar__hamburger" aria-label="Open menu" id="hamburgerBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__header">
+        <a href="#" class="navbar__logo">Tech.</a>
+        <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li><a href="#about" class="mobile-menu__link">About</a></li>
+          <li><a href="#service" class="mobile-menu__link">Service</a></li>
+          <li><a href="#our-work" class="mobile-menu__link">Our Work</a></li>
+          <li><a href="#team" class="mobile-menu__link">Team</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="btn btn--primary btn--full">Contact Us</a>
+    </div>
+
+    <main>
+      <section class="hero" id="about">
+        <div class="hero__content">
+          <h1 class="hero__heading">
+            Build with the <em>Future</em>.
+          </h1>
+          <p class="hero__description">
+            From building sleek websites and mobile apps to integrating AI
+            solutions, we help brands turn ideas into powerful digital
+            experiences that connect, engage, and scale.
+          </p>
+          <a href="#contact" class="btn btn--primary btn--lg">Let's Talk</a>
+        </div>
+        <div class="hero__image">
+          <img src="assets/images/hand.png" alt="Smartphone displaying Tech. branding" />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+      const mobileLinks = mobileMenu.querySelectorAll('.mobile-menu__link, .btn--full');
+
+      function openMenu() {
+        mobileMenu.classList.add('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburgerBtn.addEventListener('click', openMenu);
+      mobileMenuClose.addEventListener('click', closeMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
   </body>
 </html>
