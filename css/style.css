@@ -482,6 +482,7 @@ a {
 }
 
 .footer {
+  background-color: #000000;
   text-align: center;
   padding: 1.5rem var(--container-padding);
   font-size: 0.85rem;
@@ -601,4 +602,74 @@ a {
     width: 130px;
     height: 130px;
   }
+}
+
+.contact {
+  background-color: #000000;
+  padding: 6rem var(--container-padding) 5rem;
+}
+
+.contact__container {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact__subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 3rem;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.form-input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  color: var(--color-white);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn--send {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  margin-top: 0.5rem;
 }
